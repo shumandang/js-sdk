@@ -4,6 +4,7 @@
     "java.project.sourcePaths": [
         "packages/lit-auth-client"
     ],
+    "codeium.enableSearch": true,
     // "restoreTerminals.terminals": [
     //     {
     //       "splitTerminals": [
