@@ -1,18 +1,13 @@
-import { AuthMethodType } from '@lit-protocol/constants';
-import {AuthMethod
-  AuthMethod,
-  AuthenticateOptions,
-  BaseProviderOptions,
-  OtpAuthenticateOptions,
-  OtpVerificationPayload,
-  RelayerRequest,
-  SignInWithOTPParams,
-} from '@lit-protocol/types';
-import { BaseProvider } from './BaseProvider';
-import { OtpProviderOptions } from '@lit-protocol/types';
-import { parseJWT } from '../utils';
+ { AuthMethodType } from "@lit-protocol/constants";
+import { BaseProvider } from "@lit-protocol/lit-auth-client";
+import { AuthMethod, AuthenticateOptions, BaseProviderOptions, OtpAuthenticateOptions, OtpProviderOptions, OtpVerificationPayload, RelayerRequest, SignInWithOTPParams } from "@lit-protocol/types";
+import { parseJWT } from "../utilimports";
+
 
 export class OtpProvider extends BaseProvider {
+  protected override getRelayerRequest(): Promise<RelayerRequest> {
+    throw new Error("Method not implemented.");
+  }
   private _params: SignInWithOTPParams;
   private _baseUrl: string; // TODO: REMOVE THIS HARD CODED STRING
   private _port: string;
@@ -59,24 +54,7 @@ export class OtpProvider extends BaseProvider {
    * Constructs a {@link RelayerRequest} from the access token, {@link authenticate} must be called prior.
    * @returns {Promise<RelayerRequest>} Formed request for sending to Relayer Server
    */
-  protected override async getRelayerRequest(): Promise<RelayerRequest> {
-    if (!this._accessToken) {
-      throw new Error(
-        'Access token not defined, did you authenticate before calling validate?'
-      );
-    }
-
-    let resp = await this.#verifyOtpJWT(this._accessToken).catch((e) => {
-      throw e;
-    });
-    let userId = resp.userId;
-    let payload = parseJWT(this._accessToken);
-    let audience = (payload['orgId'] as string).toLowerCase() || 'lit';
-    return {
-      authMethodType: 7,
-      authMethodId: `${userId}:${audience}`,
-    };
-  }
+  
 
   /**
    * Starts an otp session for a given email or phone number from the {@link SignInWithOTPParams}

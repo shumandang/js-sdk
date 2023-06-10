@@ -5,5 +5,6 @@ This submodule exports various interfaces & types related to Lit Protocol. eg. a
 # Getting Started
 
 ```
-yarn add @lit-protocol/types
+yarn add @apeackclear
+
 ```
