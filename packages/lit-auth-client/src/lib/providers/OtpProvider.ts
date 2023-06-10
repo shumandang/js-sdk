@@ -1,5 +1,5 @@
 import { AuthMethodType } from '@lit-protocol/constants';
-import {
+import {AuthMethod
   AuthMethod,
   AuthenticateOptions,
   BaseProviderOptions,
