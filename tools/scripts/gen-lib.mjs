@@ -173,7 +173,7 @@ const editProjectJson = async () => {
   const writePath = project.sourceRoot.split('src')[0] + 'project.json';
 
   await writeJsonFile(writePath, project);
-};
+}
 
 const editPackageJson = async () => {
   const project = getProject();

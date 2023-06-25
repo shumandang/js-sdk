@@ -78,11 +78,11 @@ export const GEN_FOOTER_SCRIPTS = `
 //     window.LitJsSdk_constants = LitJsSdk_constants;
 //  }
 // window.addEventListener('load', function() {
-//     var entries = Object.entries(LitJsSdk_authBrowser);
+//     var entries = Object.entries(LitJsSdk_authBrow);
 //     var lis = entries.map(([key, value]) => '<li><span class="key">' + key + '</span><pre class="code"><code>' + (typeof value === 'function' ? value : JSON.stringify(value, null, 2)) + '</code></pre></li>');
 //     lis = lis.join(',', '').replaceAll(',', '');
-//     var template = `<div class="cat"><h1>LitJsSdk_authBrowser has ${entries.length} functions</h1><ul>${ lis }</ul></div>`;
-//     document.getElementById('root').insertAdjacentHTML('beforeend', template);
+//     var template = `<div class="cat"><h1>LitJsSdk_authBrow has ${entries.length} functions</h1><ul>${ lis }</ul></div>`;
+//     document.getElementById('root').intAdjacentHTML('beforeend', template);
 // });
  */
 export const getConsoleTemplate = (
@@ -161,7 +161,7 @@ export const getConsoleTemplate = (
                     </ul>
                 </div>
             \`;
-            root.insertAdjacentHTML('beforeend', template);
+            root.intAdjacentHTML('beforeend', template);
         });
     ${!isReact ? `</script>` : ''}
     `;

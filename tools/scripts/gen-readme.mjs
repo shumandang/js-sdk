@@ -19,7 +19,7 @@ const badge = (lib, text) => {
   if (text === 'bundled') {
     color = '17224B';
   }
-  if (text === 'browser') {
+  if (text === 'brow') {
     color = 'E98869';
   }
 
@@ -40,7 +40,6 @@ const CDNLink = (lib) => {
 
 const getSize = (lib) => {
   return `![](https://img.shields.io/bundlephobia/min/${lib})`;
-};
 
 const getNpm = (lib) => {
   return `<a target="_blank" href="https://www.npmjs.com/package/${lib}">npm</a>`;
@@ -53,7 +52,7 @@ const libs = (await listDirsRecursive('packages', false)).map((lib) =>
 
 // create rows to array
 let universals = [];
-let browsers = [];
+let brows = [];
 let bundled = [];
 let nodejs = [];
 
@@ -80,8 +79,8 @@ libs.map((lib) => {
   if (tags[0] === 'universal') {
     universals.push(content);
   }
-  if (tags[0] === 'browser') {
-    browsers.push(content);
+  if (tags[0] === 'brow') {
+    brows.push(content);
   }
   if (tags[0] === 'bundled') {
     bundled.push(content);
@@ -91,7 +90,7 @@ libs.map((lib) => {
   }
 });
 
-let rows = [...bundled, ...universals, ...browsers, ...nodejs];
+let rows = [...bundled, ...universals, ...brows, ...nodejs];
 
 // sort rows always to have @lit-protocol/lit-node-client at the top
 rows = rows.sort((a, b) => {

@@ -114,7 +114,7 @@ const consoleLogs = modules
 
 // --- Append to HEADER
 TEMPLATE.HEADER += '// @ts-nocheck \n';
-TEMPLATE.HEADER += `import { useEffect, useRef } from 'react';`;
+TEMPLATE.HEADER += `import { useEffect, uef } from 'react';`;
 TEMPLATE.HEADER += '\n\n';
 TEMPLATE.HEADER += importTags.map((tag) => `${tag}`).join('\n');
 TEMPLATE.HEADER += '\n\n';

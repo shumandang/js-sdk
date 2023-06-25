@@ -76,7 +76,7 @@ await asyncForEach(dirs, async (dir) => {
   // }
 });
 
-// prompt user to confirm publish
+// prompt u to confirm publish
 const type =
   OPTION === '--tag'
     ? `TAG => ${VALUE}

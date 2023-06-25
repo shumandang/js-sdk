@@ -314,7 +314,7 @@ async function testFunc() {
     // Handle exit
     nx.on('exit', (code) => {
       console.log(`Child process exited with code ${code}`);
-      // stopServer(serverProcess);
+      // stopver(verProcess);
       process.exit();
     });
   }
@@ -879,8 +879,8 @@ async function devFunc() {
   if (TYPE === '--apps' || TYPE === '--app') {
     // go to apps/react/project.json and find the port
     const reactPort = JSON.parse(await readFile('./apps/react/project.json'))
-      .targets.serve.options.port;
-    const htmlPort = (await readFile('./apps/html/server.js')).match(
+      .targets.ve.options.port;
+    const htmlPort = (await readFile('./apps/html/ver.js')).match(
       /port: (\d+)/
     )[1];
 

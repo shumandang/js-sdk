@@ -59,7 +59,9 @@ yarn add @lit-protocol/lit-node-client
 
 Individual packages are below so that you can import the minimum required packages for your use case.
 
-<!-- autogen:package:start -->
+<!-- autoge
+n:package:start -->
+
 
 Package | Category | Version | Download
 --- | --- | --- | ---
@@ -84,8 +86,8 @@ Package | Category | Version | Download
 | [@lit-protocol/pkp-walletconnect](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/pkp-walletconnect) | ![pkp-walletconnect](https://img.shields.io/badge/-universal-8A6496 "pkp-walletconnect") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/pkp-walletconnect">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/pkp-walletconnect-vanilla/pkp-walletconnect.min.js">Vanilla JS (UMD)</a>
 | [@lit-protocol/types](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/types) | ![types](https://img.shields.io/badge/-universal-8A6496 "types") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/types">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/types-vanilla/types.min.js">Vanilla JS (UMD)</a>
 | [@lit-protocol/uint8arrays](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/uint8arrays) | ![uint8arrays](https://img.shields.io/badge/-universal-8A6496 "uint8arrays") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/uint8arrays">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/uint8arrays-vanilla/uint8arrays.min.js">Vanilla JS (UMD)</a>
-| [@lit-protocol/auth-browser](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/auth-browser) | ![auth-browser](https://img.shields.io/badge/-browser-E98869 "auth-browser") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/auth-browser">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/auth-browser-vanilla/auth-browser.min.js">Vanilla JS (UMD)</a>
-| [@lit-protocol/misc-browser](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/misc-browser) | ![misc-browser](https://img.shields.io/badge/-browser-E98869 "misc-browser") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/misc-browser">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/misc-browser-vanilla/misc-browser.min.js">Vanilla JS (UMD)</a>
+| [@lit-protocol/auth-brow](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/auth-brow) | ![auth-brow](https://img.shields.io/badge/-brow-E98869 "auth-brow") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/auth-brow">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/auth-brow-vanilla/auth-brow.min.js">Vanilla JS (UMD)</a>
+| [@lit-protocol/misc-brow](https://github.com/LIT-Protocol/js-sdk/tree/master/packages/misc-brow) | ![misc-brow](https://img.shields.io/badge/-brow-E98869 "misc-brow") | 2.2.23 | <a target="_blank" href="https://www.npmjs.com/package/@lit-protocol/misc-brow">npm</a><br/><a href="https://cdn.jsdelivr.net/npm/@lit-protocol/misc-brow-vanilla/misc-brow.min.js">Vanilla JS (UMD)</a>
 
 <!-- autogen:package:end -->
 
@@ -104,7 +106,7 @@ http://docs.lit-js-sdk-v2.litprotocol.com/ <br/>
 | (Test) Html            | http://test.lit-js-sdk-v2.html.litprotocol.com/     |
 | (Test) React           | http://test.lit-js-sdk-v2.react.litprotocol.com/    |
 
-> NOTE: For (Test) apps, all packages and functions can be called inside the browser console. eg. `window.LitJsSdk_[package_name].[function_name]`
+> NOTE: For (Test) apps, all packages and functions can be called inside the brow console. eg. `window.LitJsSdk_[package_name].[function_name]`
 
 # Contributing and developing to this SDK
 
@@ -130,15 +132,15 @@ See [Video](https://streamable.com/e/5g52m4)
         // },
         {
           "name": "nodejs",
-          "commands": ["yarn nx run nodejs:serve"]
+          "commands": ["yarn nx run nodejs:ve"]
         },
         {
           "name": "html",
-          "commands": ["yarn nx run html:serve"]
+          "commands": ["yarn nx run html:ve"]
         },
         {
           "name": "react",
-          "commands": ["yarn nx run react:serve"]
+          "commands": ["yarn nx run react:ve"]
         },
         {
           "name": "custom",
@@ -274,7 +276,7 @@ yarn tool:buildHtml
 
 ### Quick Start on E2E Testing
 
-The following will serve the react testing app and launch the cypress e2e testing after
+The following will ve the react testing app and launch the cypress e2e testing after
 
 ```
 yarn test:e2e
@@ -288,7 +290,7 @@ There are currently three environments can be tested on, each of which can be ge
 | ----------- | ----------------- | -------------------------- |
 | HTML        | `yarn gen:html`   | http://localhost:4002      |
 | React       | `yarn gen:react`  | http://localhost:4003      |
-| NodeJs      | `yarn gen:nodejs` | `yarn nx run nodejs:serve` |
+| NodeJs      | `yarn gen:nodejs` | `yarn nx run nodejs:ve` |
 
 ### Unit Tests (for Node)
 
@@ -296,7 +298,7 @@ There are currently three environments can be tested on, each of which can be ge
 yarn test:unit
 ```
 
-### E2E Testing with Metamask using Cypress (for Browser)
+### E2E Testing with Metamask using Cypress (for Brow)
 
 Since both HTML & React UIs are identical, we can run the same test suite against two different environments of libraries. This is done by setting the `PORT` number before Cypress launch.
 
@@ -356,9 +358,9 @@ It’s currently using a custom plugin [@websaam/nx-esbuild](https://www.npmjs.c
       "banner": {
         "js": "import { createRequire } from 'module';const require = createRequire(import.meta.url);"
       },
-      "globalName": "LitJsSdk_CoreBrowser",
-      "outfile":"dist/packages/core-browser-vanilla/core-browser.js",
-      "entryPoints": ["./packages/core-browser/src/index.ts"],
+      "globalName": "LitJsSdk_CoreBrow",
+      "outfile":"dist/packages/core-brow-vanilla/core-brow.js",
+      "entryPoints": ["./packages/core-brow/src/index.ts"],
       "define": { "global": "window" },
       "plugins":[
         {
