@@ -1,6 +1,15 @@
 {
     "liveServer.settings.port": 5502,
     "todo-tree.tree.scanMode": "workspace",
+<<<<<<< Updated upstream
+=======
+    "java.project.sourcePaths": [
+        "packages/lit-auth-client"
+    ],
+    "codeium.enableSearch": true,
+    "editor.tabCompletion": "on",
+    "diffEditor.codeLens": true,
+>>>>>>> Stashed changes
     // "restoreTerminals.terminals": [
     //     {
     //       "splitTerminals": [
